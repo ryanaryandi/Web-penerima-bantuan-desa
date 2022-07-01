@@ -1,0 +1,159 @@
+.tengah > table > thead > tr > th {
+  text-align: center;
+}
+
+.tengah > table > tbody > tr > * {
+  text-align: center;
+}
+
+.baground {
+  position: relative;
+  background-color: #08b576;
+}
+
+.cari {
+  padding-left: 780px;
+  padding-bottom: 10px;
+}
+
+.enter > table > * {
+  line-height: 40px;
+}
+
+.gambar {
+  text-align: center;
+}
+
+.slideshow {
+  list-style-type: none;
+}
+
+.fix > table > tbody > tr > * {
+  text-align: start;
+}
+
+/** SLIDESHOW **/
+.slideshow,
+.slideshow:after {
+  top: 208px; /*Not sure why I needed this fix*/
+  position: fixed;
+  width: 1370px;
+  height: 500px;
+  left: 0px;
+  z-index: 0;
+}
+
+.slideshow li span {
+  position: absolute;
+  width: 1370px;
+  height: 500px;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 30s linear infinite 0s;
+}
+
+.slideshow li:nth-child(1) span {
+  background-image: url("/img/foto1.jpeg");
+}
+.slideshow li:nth-child(2) span {
+  background-image: url("/img/foto2.jpeg");
+  animation-delay: 6s;
+}
+.slideshow li:nth-child(3) span {
+  background-image: url("/img/foto3.jpeg");
+  animation-delay: 12s;
+}
+.slideshow li:nth-child(4) span {
+  background-image: url("/img/foto4.jpeg");
+  animation-delay: 18s;
+}
+.slideshow li:nth-child(5) span {
+  background-image: url("/img/foto5.jpeg");
+  animation-delay: 24s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  8% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  17% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes titleAnimation {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.no-cssanimations .cb-slideshow li span {
+  opacity: 1;
+}
+
+/*responsive*/
+@media screen and (max-width: 1080px) {
+  .cari {
+    padding-top: 10px;
+    padding-left: 120px;
+    padding-bottom: 5px;
+  }
+
+  .slideshow,
+  .slideshow:after {
+    top: 435px; /*Not sure why I needed this fix*/
+    position: fixed;
+    width: 500px;
+    height: 300px;
+    left: 0px;
+    z-index: 0;
+  }
+
+  .slideshow li span {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 30s linear infinite 0s;
+  }
+
+  .tengah > table > tbody > tr > * {
+    text-align: left;
+  }
+}
